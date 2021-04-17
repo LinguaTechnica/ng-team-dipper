@@ -14,6 +14,7 @@ describe('AppComponent', () => {
     // This object is a different instance from fixture.componentInstance
     component = new AppComponent(); // instance only; no HTML elements
     fixture = TestBed.createComponent(AppComponent); // instance and HTML elements
+    fixture.detectChanges();
   }));
 
   it('should create the app component', () => {
@@ -38,25 +39,21 @@ describe('AppComponent', () => {
   });
 
   it('should render team name to the toolbar', () => {
-    fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.toolbar span').textContent).toContain('Team Dipper');
   });
 
   it('should render team name to the header', () => {
-    fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content h1').textContent).toContain('Team Dipper');
   });
 
   it('should render team bio section to the view', () => {
-    fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('section.bio p').innerText).toContain(component.bio);
   });
 
   it('should render team contact link to the view', () => {
-    fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('section.slogan h2').innerText).toContain(component.slogan);
   });

@@ -8,6 +8,10 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      'karma-firefox-launcher',
+      'karma-safari-launcher',
+      'karma-opera-launcher',
+      'karma-ie-launcher',
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -25,7 +29,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    // Options: Firefox, Chrome, Safari, Opera, Internet Explorer
+    browsers: ['Firefox', 'Chrome', 'Safari', 'Opera', 'Internet Explorer'],
     singleRun: false,
     restartOnFileChange: true
   });
